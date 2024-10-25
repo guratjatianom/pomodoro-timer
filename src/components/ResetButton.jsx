@@ -1,17 +1,19 @@
-import { IconButton } from "@chakra-ui/react"
-import { RxPause, RxPlay, RxStop } from "react-icons/rx"
+import { IconButton, useColorModeValue } from "@chakra-ui/react";
+import { RxReset } from "react-icons/rx";
 
-function PlayButton({ isStarted, currentTime, handleClick }) {
+export default function ResetButton({ handleOnClick }) {
+  const buttonBg = useColorModeValue("teal.500", "blue.500");
+  const iconColor = useColorModeValue("white", "gray.800");
+
   return (
     <IconButton
-      title="Play or Pause Timer"
-      colorScheme="blackAlpha"
-      icon={
-        !isStarted ? <RxPlay /> : currentTime === 0 ? <RxStop /> : <RxPause />
-      }
-      onClick={handleClick}
+      title="Reset timer"
+      bg={buttonBg}
+      color={iconColor}
+      icon={<RxReset />}
+      onClick={handleOnClick}
+      _hover={{ bg: useColorModeValue("teal.600", "blue.600") }} // Hover effect
+      _active={{ bg: useColorModeValue("teal.700", "blue.700") }} // Active effect
     />
-  )
+  );
 }
-
-export default PlayButton

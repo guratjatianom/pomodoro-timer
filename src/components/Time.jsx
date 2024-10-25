@@ -1,16 +1,20 @@
-import { Text } from '@chakra-ui/react'
-import { formatTime } from '../utils'
+import { Text, useColorModeValue } from '@chakra-ui/react';
+import { formatTime } from '../utils';
 
-export default function Time({ currentTime }) {
+const Time = ({ time }) => {
+  const timeColor = useColorModeValue("gray.800", "gray.200");
+
   return (
     <Text
+      fontSize={{ base: "5xl", md: "7xl", lg: "9xl" }}
       fontWeight="bold"
-      fontSize={{ base: '5xl', md: '7xl', lg: '9xl' }}
-      color="white"
-      letterSpacing="wider"
-      fontFamily="Montserrat"
+      color={timeColor}
+      letterSpacing={"wider"}
+      fontFamily={"Montserrat"}
     >
-      {formatTime(currentTime)}
+      {formatTime(time)}
     </Text>
-  )
-}
+  );
+};
+
+export default Time;

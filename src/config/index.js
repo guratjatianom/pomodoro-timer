@@ -1,15 +1,14 @@
 export const initialTimer = [
-    {
-      value: 0,
-      display: "pomodoro"
-    },
-    {
-      value: 0,
-      display: "Short Break"
-    },
-    {
-      value: 0,
-      display: "Long Break"
-    }
-  ]
-  
+	{
+		value: 1500,
+		display: "Pomodoro"
+	},
+	{
+		value: 300,
+		display: "Short Break"
+	},
+	{
+		value: 900,
+		display: "Long Break"
+	}
+]
